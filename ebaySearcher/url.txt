@@ -1,0 +1,7 @@
+http://www.ebay.com/sch/Stamps-/260/i.html?_ftrt=901&_sadis=15&LH_Auction=1&_dmd=2&_sabdlo=1&LH_BIN=1&_ftrv=24&_nkw=&_sop=10&_pgn=0&_skc=0&rt=nc
+
+python /Volumes/BOOTCAMP/Work/python/src/ebaySearcher/searcher.py "http://www.ebay.com/sch/Stamps-/260/i.html?_ftrt=901&_sadis=15&LH_Auction=1&_dmd=2&_sabdlo=1&LH_BIN=1&_ftrv=24&_nkw=&_sop=10&_pgn=0&_skc=0&rt=nc" 24 100
+
+/Volumes/BOOTCAMP/Work/python/src/ebaySearcher
+
+python /Volumes/BOOTCAMP/Work/python/src/ebaySearcher/searcher.py "http://www.ebay.com/sch/Stamps-/260/i.html?_ftrt=901&_sadis=15&LH_Auction=1&_dmd=2&_sabdlo=1&LH_BIN=1&_ftrv=24&_nkw=&_sop=10&_pgn=0&_skc=0&rt=nc" 24 "May not ship"
