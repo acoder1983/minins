@@ -3,7 +3,7 @@
 
 import re
 import time
-import urllib2
+import urllib.request
 import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
@@ -18,8 +18,9 @@ sender = 'acoder1984@163.com'
 receivers = ['acoder1984@163.com']  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
 
 def fetchIp():
-    response=urllib2.urlopen('http://www.net.cn/static/customercare/yourip.asp')
-    page=response.read()
+    request=urllib.request.Request('http://www.net.cn/static/customercare/yourip.asp')
+    response=urllib.request.urlopen(request)
+    page=str(response.read())
     p=re.compile('\d+\.\d+\.\d+\.\d+')
     m=p.search(page)
     return m.group()
@@ -31,7 +32,7 @@ while True:
         ip=fetchIp()
         if ip != my_ip:
             my_ip=ip
-            print my_ip
+            print( my_ip)
             message = MIMEText(my_ip, 'plain', 'utf-8')
             subject = my_ip
             message['Subject'] = Header(subject, 'utf-8')
@@ -41,8 +42,8 @@ while True:
             smtpObj.login(mail_user,mail_pass) 
             smtpObj.sendmail(sender, receivers, message.as_string())
             smtpObj.close()
-    except Exception, e:
-        print e
+    except Exception as e:
+        print(e)
 
-    time.sleep(30)
+    time.sleep(3)
 
