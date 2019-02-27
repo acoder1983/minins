@@ -24,6 +24,11 @@ def main(f):
     dates.append(int(datetime.fromtimestamp(mtime).strftime('%Y%m%d')))
     print(dates)
     print(min(dates))
+    d=str(min(dates))
+    d=datetime(int(d[:4]),int(d[4:6]),int(d[6:8]))
+    os.utime(f,(d.timestamp(),d.timestamp()))
+    mtime=os.path.getmtime(f)
+    print(datetime.fromtimestamp(mtime).strftime('%Y%m%d'))
 #     r=p.wait()
     
 
